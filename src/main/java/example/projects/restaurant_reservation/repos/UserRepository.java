@@ -1,6 +1,6 @@
 package example.projects.restaurant_reservation.repos;
 
-import example.projects.restaurant_reservation.domain.User;
+import example.projects.restaurant_reservation.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

@@ -1,4 +1,4 @@
-package example.projects.restaurant_reservation.domain;
+package example.projects.restaurant_reservation.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
