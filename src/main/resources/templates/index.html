@@ -2,14 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Restaurant Reservation</title>
+    <title>Amenities Reservation App</title>
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
 
 <div>
-    TEST / TEST
+    <div class="img-fluid" style="background-image: url('https://media.istockphoto.com/photos/empty-tabletop-in-the-coffe-shop-picture-id1191879835?k=20&m=1191879835&s=612x612&w=0&h=WM--FehE2sULPmRB5Kz0s0uL8Oxh5sk3mZZqyIwVJZc=');
+                                   position: absolute;
+                                   left: 0;
+                                   top: 0;
+                                   opacity: 0.6;
+                                   z-index: -1;
+                                   min-height: 100vh;
+                                   min-width: 100vw;">
+    </div>
+
+    <div class="container" style="padding-top: 20vh; display: flex; flex-direction: column; align-items: center;">
+        <h1 class="display-1">Reserve a table in Restaurant ? Now it's really simple</h1>
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+        <a href="/reservations" class="btn btn-success btn-lg my-2">Reserve a table in restaurant</a>
+    </div>
 </div>
 
 <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
