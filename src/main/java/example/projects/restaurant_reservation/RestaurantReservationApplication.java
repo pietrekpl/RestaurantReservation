@@ -29,7 +29,10 @@ public class RestaurantReservationApplication {
     public CommandLineRunner loadData(UserRepository userRepository, RestaurantReservationRepository restaurantReservationRepository) {
 
         return (args) -> {
-            User user = userRepository.save(new User());
+            User user = new User();
+            user.setFullName("Piotr");
+            user.setUsername("PL");
+            userRepository.save(user);
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             Date date = new Date();
             LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();

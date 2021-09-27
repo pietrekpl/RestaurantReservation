@@ -37,6 +37,21 @@ public class User {
     )
     private Long id;
 
+    @Column(nullable = false, unique = true)
+    private String fullName;
+
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column
+    private String passwordHash;
+
+    public User(String fullName, String username, String passwordHash) {
+        this.fullName = fullName;
+        this.username = username;
+        this.passwordHash = passwordHash;
+    }
+
     @OneToMany(mappedBy = "userReservation")
     private Set<RestaurantReservation> userReservationRestaurantReservations;
 
@@ -56,5 +71,6 @@ public class User {
     public void preUpdate() {
         lastUpdated = OffsetDateTime.now();
     }
+
 
 }
