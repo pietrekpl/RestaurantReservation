@@ -6,6 +6,7 @@ import java.time.OffsetDateTime;
 import javax.persistence.*;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -33,16 +34,19 @@ public class RestaurantReservation {
     @Column
     private String restaurantName;
 
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     @Column
     private LocalDate dateOfReservation;
 
+    @DateTimeFormat(pattern = "HH:mm")
     @Column
     private LocalTime reservationTimeFrom;
 
+    @DateTimeFormat(pattern = "HH:mm")
     @Column
     private LocalTime reservationTimeTo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "user_reservation_id", nullable = false)
     private User userReservation;
 
