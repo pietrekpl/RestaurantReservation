@@ -1,16 +1,9 @@
 package example.projects.restaurant_reservation.model;
 
 import java.time.OffsetDateTime;
+import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 
 import lombok.*;
 
@@ -52,8 +45,11 @@ public class User {
         this.passwordHash = passwordHash;
     }
 
-    @OneToMany(mappedBy = "userReservation")
-    private Set<RestaurantReservation> userReservationRestaurantReservations;
+   /* @OneToMany(mappedBy = "userReservation")
+    private Set<RestaurantReservation> userReservationRestaurantReservations;*/
+
+    @OneToMany(mappedBy = "userReservation", fetch = FetchType.EAGER)
+    private Set<RestaurantReservation> reservations = new HashSet<>();
 
     @Column(nullable = false, updatable = false)
     private OffsetDateTime dateCreated;

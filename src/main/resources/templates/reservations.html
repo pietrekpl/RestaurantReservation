@@ -22,12 +22,12 @@
             </tr>
             </thead>
             <tbody>
-            <!--<tr th:each="reservation : ${user.getReservations()}">
+            <tr th:each="reservation : ${session.user.getReservations()}">
                 <td th:text="${reservation.getRestaurantType()}"></td>
                 <td th:text="${reservation.getDateOfReservation()}"></td>
                 <td th:text="${reservation.getReservationTimeFrom()}"></td>
                 <td th:text="${reservation.getReservationTimeTo()}"></td>
-            </tr>-->
+            </tr>
             </tbody>
         </table>
     </div>
