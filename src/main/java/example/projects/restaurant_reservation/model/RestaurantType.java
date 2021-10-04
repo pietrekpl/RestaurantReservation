@@ -13,8 +13,6 @@ public enum RestaurantType {
 
     @Override
     public String toString() {
-        return "RestaurantType{" +
-                "type='" + type + '\'' +
-                '}';
+        return type;
     }
 }
