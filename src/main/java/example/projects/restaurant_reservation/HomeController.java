@@ -15,8 +15,8 @@ import java.util.Set;
 @Controller
 public class HomeController {
 
-    private UserService userService;
-    private RestaurantReservationService reservationService;
+    private final UserService userService;
+    private final RestaurantReservationService reservationService;
 
 
     public HomeController(UserService userService, RestaurantReservationService reservationService) {
@@ -49,9 +49,6 @@ public class HomeController {
         user.setReservations(userReservations);
         userService.update(user.getId(), user);
         return "redirect:/reservations";
-
-
-
 
     }
 
