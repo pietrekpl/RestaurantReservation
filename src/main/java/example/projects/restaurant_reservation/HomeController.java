@@ -38,7 +38,7 @@ public class HomeController {
         return "reservations";
 
     }
-    @PostMapping("/reservations-submit")
+  /*  @PostMapping("/reservations-submit")
     public String reservationsSubmit(@ModelAttribute RestaurantReservation restaurantReservation,
                                      @SessionAttribute("user")User user){
         assert user != null;
@@ -49,7 +49,19 @@ public class HomeController {
         user.setReservations(userReservations);
         userService.update(user.getId(), user);
         return "redirect:/reservations";
+    }*/
+    @GetMapping("/reservations-submit")
+        public String reservationsForm(@ModelAttribute("restaurantReservation") RestaurantReservation restaurantReservation){
+            return "form";
+      }
 
-    }
+      @PostMapping("/reservations-submit")
+    public String reservationsSubmit(@ModelAttribute("restaurantReservation") RestaurantReservation restaurantReservation,
+                                     Model model) {
+        model.addAttribute("restaurantReservation", restaurantReservation);
+        return "redirect:/reservations";
+      }
+
+
 
 }
