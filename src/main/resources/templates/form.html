@@ -10,9 +10,9 @@
 <form action="#" th:action="@{/reservations-submit}" th:object="${restaurantReservation}" method="post">
 
     <select th:field="*{restaurantType}">
-        <option th:each="type : ${allTypes}"
-                th:value="${restaurantType}"
-                th:text="#{${'seedstarter.type.' + restaurantType}}">Wireframe</option>
+       <option th:value="FAST_FOOD">Fast Food</option>
+       <option th:value="CASUAL">Casual</option>
+       <option th:value="PREMIUM">Premium</option>
     </select>
 
    <!-- <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee First Name" type="text" th:field="*{firstName}">
