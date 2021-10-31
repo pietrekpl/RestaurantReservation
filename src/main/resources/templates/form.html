@@ -7,35 +7,46 @@
 <body>
 
 <div align="center">
-<form action="#" th:action="@{/reservations-submit}" th:object="${restaurantReservation}" method="post">
+    <form action="#" th:action="@{/reservations-submit}" th:object="${restaurantReservation}" method="post">
 
-    <select th:field="*{restaurantType}">
-       <option th:value="FAST_FOOD">Fast Food</option>
-       <option th:value="CASUAL">Casual</option>
-       <option th:value="PREMIUM">Premium</option>
-    </select>
+        <select th:field="*{restaurantType}">
+            <option th:value="FAST_FOOD">Fast Food</option>
+            <option th:value="CASUAL">Casual</option>
+            <option th:value="PREMIUM">Premium</option>
+        </select>
+        <br>
+        TIME FROM = <input type="time" th:field="*{reservationTimeFrom}">
+        <br>
+        TIME TO = <input type="time" th:field="*{reservationTimeTo}">
+        <br>
 
-   <!-- <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee First Name" type="text" th:field="*{firstName}">
-    <br>
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
-    <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee last Name" type="text" th:field="*{lastName}">
-    <br>
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
-    <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee email" type="text" th:field="*{email}">
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
-    <br>
-    <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Contract start date" type="date" th:field="*{date}">
-    <div class="alert alert-warning" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
-    <br>-->
+        <!-- <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee First Name" type="text" th:field="*{firstName}">
+         <br>
+         <div class="alert alert-warning" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+         <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee last Name" type="text" th:field="*{lastName}">
+         <br>
+         <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+         <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Employee email" type="text" th:field="*{email}">
+         <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+         <br>
+         <input class="form-control form-control-lg" aria-label=".form-control-sm example" placeholder="Contract start date" type="date" th:field="*{date}">
+         <div class="alert alert-warning" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+         <br>-->
 
-    <button type="submit" class="btn btn-secondary">Create reservation</button>
+        <button type="submit" class="btn btn-secondary">Create reservation</button>
 
 
-</form>
+    </form>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
