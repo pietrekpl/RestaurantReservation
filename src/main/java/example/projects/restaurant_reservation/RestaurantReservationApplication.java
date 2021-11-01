@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,6 +33,7 @@ public class RestaurantReservationApplication {
             User user = new User();
             user.setFullName("Piotr");
             user.setUsername("PL");
+            user.setPasswordHash(bCryptPasswordEncoder().encode("12345"));
             userRepository.save(user);
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             Date date = new Date();
@@ -49,6 +51,11 @@ public class RestaurantReservationApplication {
 
         };
 
+    }
+
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
 }
